@@ -1,0 +1,21 @@
+
+<html>
+	<head>
+		<title>Configuration</title>
+	</head>
+	<body>
+    username : {{user_info[0]}}<br />
+    mail : {{user_info[2]}}
+    <form method="POST" action = "/add_user">
+        <input type="hidden" name="username" value={{user_info[0]}} ><br />
+        <input type="hidden" name="password" value={{user_info[1]}}><br />
+        <input type="hidden" name="mail" value={{user_info[2]}} ><br />
+        <input type="hidden" name="csrf_token" value={{csrf_token}} ><br />
+	    <input type="submit"/>
+		<input type="reset" />
+	</form>
+        <a href="/register">戻る</a>
+        <a href="/login">ログイン</a>
+	</body>
+</html>
+

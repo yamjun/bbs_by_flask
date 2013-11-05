@@ -1,0 +1,37 @@
+<html>
+<head></head>
+<body>
+
+
+<a href="/logout">ログアウト</a>
+<form method="POST" action="/add_message"> 
+<table> 
+<tr> 
+  <td><b>コメント</b></td> 
+  <td><textarea cols="20" rows="5" name="text"></textarea></td> 
+</tr> 
+<tr> 
+  <td colspan="2"><input type="submit" value="送信"><input type="reset" value="リセット"></td> 
+</tr> 
+</table> 
+    <input type="hidden" name="csrf_token" value={{csrf_token}} ><br />
+</form> 
+<p>２００文字以内で入力してください</p>
+<HR>
+{% if error_msg %}
+    {{error_msg}}
+{% endif %}
+
+{% for message in messages %}
+    {{message[1]}}
+    {% if check(message[2]) %}
+        {{ baz( message[2] ) | safe}}
+    {% else %}
+        {{  message[2] }}
+    {% endif %}
+    {{message[3]}}
+    <br>
+    
+{% endfor %}
+
+</body>

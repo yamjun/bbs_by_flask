@@ -1,0 +1,20 @@
+
+<html>
+	<head>
+		<title>Login</title>
+	</head>
+	<body>
+		{% if error %}
+            {% for e in error %}
+                {{ e }}<br>
+            {% endfor %}
+		{% endif %}
+		<form method="POST">
+            mail: <input type="text" name="mail" {%if info %} value={{info}} {%endif%} ><br />
+            passwrord:<input type="password" name="password" /><br />
+			<input type="submit"/>
+		</form>
+        <a href="/register">新規登録</a>
+	</body>
+</html>
+

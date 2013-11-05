@@ -1,0 +1,23 @@
+
+<html>
+	<head>
+		<title>Register</title>
+	</head>
+	<body> 
+		{% if error %}
+            {% for error_msg in error %}
+                {{error_msg}}<br />
+            {% endfor %}
+		{% endif %}
+		<form method="POST">
+            username: <input type="text" name="username" value={{info[0]}} ><br />
+            passwrord:<input type="password" name="password" ><br />
+            mail:<input type="text" name="mail" value={{info[1]}} ><br />
+			<input type="submit"/>
+			<input type="reset" />
+		</form>
+        <a href="/login">ログイン</a>
+        <p>英数字128文字にしてください</p>
+	</body>
+</html>
+
